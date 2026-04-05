@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOPHI GROUP - 자유상인 로드맵</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden; font-family: 'Noto Sans KR', sans-serif; background-color: #000; color: #fff; }
+        .video-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        .video-background iframe { position: absolute; top: 50%; left: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); pointer-events: none; }
+        @media (min-aspect-ratio: 16/9) { .video-background iframe { height: 56.25vw; } }
+        @media (max-aspect-ratio: 16/9) { .video-background iframe { width: 177.78vh; } }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 0; }
+        .content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 40px 20px; }
+        .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+        h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,255,255,0.5); }
+        .sub-text { font-size: 1.1rem; color: #ccc; margin-bottom: 50px; }
+        .quote-box { background: rgba(255, 255, 255, 0.05); border-left: 4px solid #D4AF37; padding: 30px; margin: 40px 0; max-width: 600px; }
+        .quote-box h2 { color: #FFD700; font-size: 1.5rem; margin-bottom: 15px; }
+        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 20px 40px; border-radius: 8px; text-decoration: none; font-size: 1.2rem; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5); margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/Vz6vN8R4E_o?autoplay=1&mute=1&controls=0&loop=1&playlist=Vz6vN8R4E_o&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="gold-text">REZERA MASTERCLASS</div>
+        <h1>AI로 돈 버는 '아저씨'의 비밀</h1>
+        <p class="sub-text">본능을 깨우는 AI 영상 기술의 정점</p>
+        <div class="quote-box">
+            <h2>"뜰 앞의 잣나무처럼 중심을 잡으십시오"</h2>
+            <p>조회수는 기술이 만들지만, 수익은 <b>심법(心法)</b>이 만듭니다.<br>흔들리는 유행 속에서 변하지 않는 부의 본질을 공유합니다.</p>
+        </div>
+        <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">매매신호레시피 합류하기</a>
+    </div>
+</body>
+</html>
