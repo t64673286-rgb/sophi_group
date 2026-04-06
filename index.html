@@ -9,13 +9,11 @@
         .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; display: none; }
         .v-bg iframe { width: 100vw; height: 177.77vw; min-height: 100vh; min-width: 56.25vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
         .placeholder { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; z-index: 1; cursor: pointer; }
-        /* 금색 동그라미 디자인 */
-        .circle-btn { width: 220px; height: 220px; border: 2px solid #D4AF37; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-        .circle-btn:active { transform: scale(0.95); border-color: #fff; }
+        .circle-btn { width: 220px; height: 220px; border: 2px solid #D4AF37; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2; pointer-events: none; display: none; }
         .content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; pointer-events: none; }
         .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
-        h1 { font-size: 2.1rem; margin-bottom: 10px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        h1 { font-size: 2.1rem; margin-bottom: 10px; }
         .click-msg { color: #FFD700; font-size: 0.95rem; animation: blink 1.5s infinite; margin-top: 10px; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 40px; pointer-events: auto; }
@@ -34,7 +32,7 @@
     </div>
 
     <div class="v-bg" id="video-box">
-        <iframe id="player" src="https://www.youtube.com/embed/REctdW1mxkk?enablejsapi=1&autoplay=0&mute=1&controls=0&loop=1&playlist=REctdW1mxkk&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+        <div id="player-container"></div>
     </div>
     <div class="overlay" id="video-overlay"></div>
 
@@ -43,19 +41,14 @@
             var startScreen = document.getElementById('start-screen');
             var videoBox = document.getElementById('video-box');
             var videoOverlay = document.getElementById('video-overlay');
-            var player = document.getElementById('player');
+            var container = document.getElementById('player-container');
 
-            // 화면 전환
+            // 클릭하는 순간 영상을 강제로 집어넣습니다 (자동 재생 확률 UP!)
+            container.innerHTML = '<iframe src="https://www.youtube.com/embed/REctdW1mxkk?autoplay=1&mute=1&controls=0&loop=1&playlist=REctdW1mxkk&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>';
+
             videoBox.style.display = 'block';
             videoOverlay.style.display = 'block';
-            
-            // 영상 재생 신호 강제 전송
-            player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-            player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-
-            // 안내 문구 삭제 및 배경 투명화
             document.querySelector('.click-msg').style.display = 'none';
-            document.querySelector('.circle-btn').style.border = '1px solid rgba(212, 175, 55, 0.3)';
         }
     </script>
 </body>
