@@ -5,51 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOPHI GROUP - 자유상인 로드맵</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; font-family: 'Noto Sans KR', sans-serif; cursor: pointer; }
-        .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .v-bg iframe { width: 100vw; height: 177.77vw; min-height: 100vh; min-width: 56.25vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; }
-        /* 영상 재생 전 보여줄 배경 이미지 (쇼피파이의 그 느낌!) */
-        .placeholder { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, #1a1a1a 0%, #000 100%); display: flex; align-items: center; justify-content: center; z-index: 1; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2; }
-        .content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; }
-        .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; font-size: 0.9rem; }
-        h1 { font-size: 2rem; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
-        .click-hint { color: #FFD700; font-size: 0.9rem; margin-top: 10px; animation: blink 1.5s infinite; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        .quote-box { background: rgba(255, 255, 255, 0.07); border-left: 4px solid #D4AF37; padding: 20px; margin: 25px 0; max-width: 450px; }
-        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; font-family: 'Noto Sans KR', sans-serif; }
+        .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; display: none; }
+        .v-bg iframe { width: 100vw; height: 177.77vw; min-height: 100vh; min-width: 56.25vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+        .placeholder { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; z-index: 1; cursor: pointer; }
+        /* 금색 동그라미 디자인 */
+        .circle-btn { width: 220px; height: 220px; border: 2px solid #D4AF37; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        .circle-btn:active { transform: scale(0.95); border-color: #fff; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2; pointer-events: none; display: none; }
+        .content { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; pointer-events: none; }
+        .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
+        h1 { font-size: 2.1rem; margin-bottom: 10px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        .click-msg { color: #FFD700; font-size: 0.95rem; animation: blink 1.5s infinite; margin-top: 10px; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 40px; pointer-events: auto; }
     </style>
 </head>
-<body onclick="playVideo()">
-    <div class="placeholder" id="bg-img">
-        <div style="width: 200px; height: 200px; border: 2px solid #D4AF37; border-radius: 50%; opacity: 0.3;"></div>
-    </div>
-    <div class="v-bg">
-        <iframe id="player" src="https://www.youtube.com/embed/REctdW1mxkk?enablejsapi=1&mute=1&controls=0&loop=1&playlist=REctdW1mxkk&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-    </div>
-    <div class="overlay"></div>
-    <div class="content">
-        <div class="gold-text">REZERA MASTERCLASS</div>
-        <h1>AI로 돈 버는 '아저씨'의 비밀</h1>
-        <p class="click-hint">▲ 화면을 터치하면 영상이 재생됩니다 ▲</p>
-        <div class="quote-box">
-            <p style="margin:0;">"뜰 앞의 잣나무처럼 중심을 잡으십시오"</p>
-            <p style="font-size: 0.85rem; color: #ccc; margin-top: 10px;">수익은 <b>심법(心法)</b>이 만듭니다.</p>
+<body>
+    <div class="placeholder" id="start-screen" onclick="revealSecret()">
+        <div class="content">
+            <div class="gold-text">REZERA MASTERCLASS</div>
+            <h1>AI로 돈 버는 '아저씨'의 비밀</h1>
+            <div class="circle-btn">
+                <p class="click-msg">● 비밀 영상 보기 ●<br>(터치하세요)</p>
+            </div>
+            <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">매매신호레시피 합류하기</a>
         </div>
-        <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">매매신호레시피 합류하기</a>
     </div>
 
+    <div class="v-bg" id="video-box">
+        <iframe id="player" src="https://www.youtube.com/embed/REctdW1mxkk?enablejsapi=1&autoplay=0&mute=1&controls=0&loop=1&playlist=REctdW1mxkk&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+    </div>
+    <div class="overlay" id="video-overlay"></div>
+
     <script>
-        function playVideo() {
+        function revealSecret() {
+            var startScreen = document.getElementById('start-screen');
+            var videoBox = document.getElementById('video-box');
+            var videoOverlay = document.getElementById('video-overlay');
             var player = document.getElementById('player');
-            var bgImg = document.getElementById('bg-img');
-            var hint = document.querySelector('.click-hint');
-            player.style.display = 'block';
-            bgImg.style.display = 'none';
-            hint.style.display = 'none';
-            // 유튜브 API를 이용해 강제 재생 신호를 보냅니다.
+
+            // 화면 전환
+            videoBox.style.display = 'block';
+            videoOverlay.style.display = 'block';
+            
+            // 영상 재생 신호 강제 전송
             player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
             player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+
+            // 안내 문구 삭제 및 배경 투명화
+            document.querySelector('.click-msg').style.display = 'none';
+            document.querySelector('.circle-btn').style.border = '1px solid rgba(212, 175, 55, 0.3)';
         }
     </script>
 </body>
