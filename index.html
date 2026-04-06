@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOPHI GROUP - 자유상인 로드맵</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; font-family: 'Noto Sans KR', sans-serif; }
-        /* 올려주신 사진을 배경에 꽉 채우는 마법 */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #1a1a1a; font-family: 'Noto Sans KR', sans-serif; }
+        
         .bg-image { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            /* 사진 파일 이름을 bg.jpg로 정확히 맞춰주세요! */
             background: url('bg.jpg') no-repeat center center; 
-            background-size: cover; z-index: -1; 
+            background-size: cover; 
+            z-index: -1; 
         }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 0; }
+        
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 0; }
+        
         .content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; }
         .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
         h1 { font-size: 2.2rem; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        
         .quote-box { background: rgba(255, 255, 255, 0.07); border-left: 4px solid #D4AF37; padding: 25px; margin: 30px 0; max-width: 450px; line-height: 1.6; }
-        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); }
+        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); display: inline-block; }
     </style>
 </head>
 <body>
