@@ -6,27 +6,33 @@
     <title>SOPHI GROUP - 자유상인</title>
     <style>
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; font-family: 'Noto Sans KR', sans-serif; }
-        .v-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .v-bg iframe { width: 100vw; height: 177.77vw; min-height: 100vh; min-width: 56.25vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+        
+        /* 깃허브에 올라온 bg.jpg를 배경으로 꽉 채웁니다 */
+        .bg-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('bg.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+        }
+        
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 0; }
+        
         .content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; }
         .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
-        h1 { font-size: 2.2rem; margin-bottom: 15px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
+        h1 { font-size: 2.2rem; margin-bottom: 20px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
         .quote-box { background: rgba(255, 255, 255, 0.07); border-left: 4px solid #D4AF37; padding: 25px; margin: 30px 0; max-width: 450px; line-height: 1.6; }
-        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); }
+        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); display: inline-block; }
     </style>
 </head>
 <body>
-    <div class="v-bg">
-        <iframe src="https://www.youtube.com/embed/REctdW1mxkk?autoplay=1&mute=1&loop=1&playlist=REctdW1mxkk&controls=0&rel=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-    </div>
+    <div class="bg-container"></div>
     <div class="overlay"></div>
     <div class="content">
         <div class="gold-text">REZERA MASTERCLASS</div>
         <h1>AI로 돈 버는 '아저씨'의 비밀</h1>
         <div class="quote-box">
             <p>"뜰 앞의 잣나무처럼 중심을 잡으십시오"</p>
-            <p style="font-size: 0.9rem; color: #ccc;">수익은 <b>심법(心法)</b>이 만듭니다.</p>
+            <p style="font-size: 0.9rem; color: #ccc; margin-top: 10px;">수익은 <b>심법(心法)</b>이 만듭니다.</p>
         </div>
         <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">매매신호레시피 합류하기</a>
     </div>
