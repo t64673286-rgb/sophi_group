@@ -3,38 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOPHI GROUP - 자유상인</title>
+    <title>ARTISAN - 글로벌 자동수익화 함대</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; font-family: 'Noto Sans KR', sans-serif; }
+        body, html { margin: 0; padding: 0; background-color: #050505; color: #fff; font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
+        .container { max-width: 500px; margin: 0 auto; background: #000; min-height: 100vh; position: relative; box-shadow: 0 0 50px rgba(212, 175, 55, 0.1); }
         
-        /* 깃허브에 올라온 bg.jpg를 배경으로 꽉 채웁니다 */
-        .bg-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('bg.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-        }
+        /* 히어로 섹션 */
+        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); padding: 0 20px; }
+        .gold-tag { color: #D4AF37; font-weight: bold; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid #D4AF37; padding: 5px 15px; border-radius: 20px; display: inline-block; }
+        h1 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 30px; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        h1 span { color: #D4AF37; }
+        .scroll-down { margin-top: 50px; color: #666; font-size: 0.8rem; animation: bounce 2s infinite; }
+
+        /* 섹션 공통 스타일 */
+        .section { padding: 80px 30px; border-bottom: 1px solid #111; }
+        .section-title { font-size: 1.6rem; color: #D4AF37; margin-bottom: 40px; text-align: center; font-weight: bold; }
         
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 0; }
-        
-        .content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: #fff; padding: 0 20px; }
-        .gold-text { color: #D4AF37; font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; }
-        h1 { font-size: 2.2rem; margin-bottom: 20px; text-shadow: 0 0 15px rgba(255,255,255,0.4); }
-        .quote-box { background: rgba(255, 255, 255, 0.07); border-left: 4px solid #D4AF37; padding: 25px; margin: 30px 0; max-width: 450px; line-height: 1.6; }
-        .btn-join { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: #fff; padding: 18px 35px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); display: inline-block; }
+        /* 3無 원칙 카드 */
+        .card { background: rgba(255,255,255,0.03); border: 1px solid #222; padding: 30px; margin-bottom: 20px; border-radius: 10px; transition: 0.3s; }
+        .card:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
+        .card h3 { color: #D4AF37; margin-top: 0; font-size: 1.2rem; }
+        .card p { color: #ccc; line-height: 1.6; font-size: 0.95rem; margin-bottom: 0; }
+
+        /* 로드맵 인포그래픽 */
+        .step { position: relative; padding-left: 50px; margin-bottom: 40px; }
+        .step::before { content: ''; position: absolute; left: 15px; top: 0; width: 2px; height: 100%; background: linear-gradient(to bottom, #D4AF37, transparent); }
+        .step-num { position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: #D4AF37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .step h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .step p { color: #999; font-size: 0.85rem; margin: 0; }
+
+        /* 하단 버튼 */
+        .cta-box { position: sticky; bottom: 0; left: 0; width: 100%; padding: 20px; box-sizing: border-box; background: linear-gradient(to top, #000 80%, transparent); z-index: 100; }
+        .btn-join { display: block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: #000; text-align: center; padding: 20px; border-radius: 10px; text-decoration: none; font-size: 1.2rem; font-weight: bold; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
     </style>
 </head>
 <body>
-    <div class="bg-container"></div>
-    <div class="overlay"></div>
-    <div class="content">
-        <div class="gold-text">REZERA MASTERCLASS</div>
-        <h1>AI로 돈 버는 '아저씨'의 비밀</h1>
-        <div class="quote-box">
-            <p>"뜰 앞의 잣나무처럼 중심을 잡으십시오"</p>
-            <p style="font-size: 0.9rem; color: #ccc; margin-top: 10px;">수익은 <b>심법(心法)</b>이 만듭니다.</p>
+    <div class="container">
+        <div class="hero">
+            <div class="gold-tag">SOPHI GROUP</div>
+            <h1>당신이 잠든 사이,<br>전 세계가 <span>달러</span>로 결제합니다</h1>
+            <p style="color:#888;">AI 글로벌 자동수익화 함대 마스터클래스</p>
+            <div class="scroll-down">아래로 스크롤하여 함대에 승선하세요 ↓</div>
         </div>
-        <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">매매신호레시피 합류하기</a>
-    </div>
-</body>
-</html>
+
+        <div class="section">
+            <div class="section-title">"인간은 웃깁니다,<br>하지만 시스템은 정직합니다"</div>
+            <div class="card">
+                <h3>01. 사람 유치 NO</h3>
+                <p>지인에게 아쉬운 소리 하지 마십시오. 우리는 사람을 쫓지 않고 시스템을 구축합니다.</p>
+            </div>
+            <div class="card">
+                <h3>02. 광고 부담 NO</h3>
+                <p>에치(Etsy)와 쇼피파이의 검색 엔진이 전 세계 손님을 알아서 데려옵니다.</p>
+            </div>
+            <div class="card">
+                <h3>03. 노동 집약 NO</h3>
+                <p>한 번 등록한 AI 콘텐츠는 당신이 잠든 사이에도 무한 복제되어 판매됩니다.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">글로벌 달러 파이프라인</div>
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4>글로벌 본부 구축 (Shopify)</h4>
+                <p>전문가의 포스가 느껴지는 독자적인 글로벌 쇼핑몰 세팅</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4>에치(Etsy) 항구 입성</h4>
+                <p>전 세계 수억 명의 구매자가 대기 중인 마켓플레이스 런칭</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4>영업 자동화 (BixGrow)</h4>
+                <p>글로벌 파트너들이 당신 대신 마케팅하는 레
