@@ -14,82 +14,60 @@
         .gold-tag { color: #D4AF37; font-weight: bold; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid #D4AF37; padding: 5px 15px; border-radius: 20px; display: inline-block; }
         h1 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 30px; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
         h1 span { color: #D4AF37; }
-        .scroll-down { margin-top: 50px; color: #666; font-size: 0.8rem; animation: bounce 2s infinite; }
 
         /* 섹션 공통 스타일 */
-        .section { padding: 80px 30px; border-bottom: 1px solid #111; }
+        .section { padding: 60px 30px; border-bottom: 1px solid #111; }
         .section-title { font-size: 1.6rem; color: #D4AF37; margin-bottom: 40px; text-align: center; font-weight: bold; }
         
+        /* 수익 인증 이미지 스타일 */
+        .report-img { width: 100%; border: 1px solid #D4AF37; border-radius: 8px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); margin-bottom: 20px; }
+        
         /* 3無 원칙 카드 */
-        .card { background: rgba(255,255,255,0.03); border: 1px solid #222; padding: 30px; margin-bottom: 20px; border-radius: 10px; transition: 0.3s; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid #222; padding: 25px; margin-bottom: 20px; border-radius: 10px; transition: 0.3s; }
         .card:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
         .card h3 { color: #D4AF37; margin-top: 0; font-size: 1.2rem; }
         .card p { color: #ccc; line-height: 1.6; font-size: 0.95rem; margin-bottom: 0; }
 
-        /* 로드맵 인포그래픽 */
-        .step { position: relative; padding-left: 50px; margin-bottom: 40px; }
-        .step::before { content: ''; position: absolute; left: 15px; top: 0; width: 2px; height: 100%; background: linear-gradient(to bottom, #D4AF37, transparent); }
-        .step-num { position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: #D4AF37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-        .step h4 { margin: 0 0 10px 0; font-size: 1.1rem; }
-        .step p { color: #999; font-size: 0.85rem; margin: 0; }
-
-        /* 하단 버튼 (중요: 카페 링크 반영) */
+        /* 하단 버튼 */
         .cta-box { position: sticky; bottom: 0; left: 0; width: 100%; padding: 20px; box-sizing: border-box; background: linear-gradient(to top, #000 80%, transparent); z-index: 100; }
         .btn-join { display: block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: #000; text-align: center; padding: 20px; border-radius: 10px; text-decoration: none; font-size: 1.2rem; font-weight: bold; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
-
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="hero">
             <div class="gold-tag">SOPHI GROUP</div>
-            <h1>당신이 잠든 사이,<br>전 세계가 <span>달러</span>로 결제합니다</h1>
-            <p style="color:#888;">AI 글로벌 자동수익화 함대 마스터클래스</p>
-            <div class="scroll-down">아래로 스크롤하여 함대에 승선하세요 ↓</div>
+            <h1>당신이 잠든 사이,<br>시스템은 <span>숫자</span>로 증명합니다</h1>
+            <p style="color:#888;">AI 글로벌 자동수익화 함대 리포트</p>
+        </div>
+
+        <div class="section" style="background: #080808;">
+            <div class="section-title">"시스템은 정직합니다"</div>
+            <div style="text-align: center;">
+                <p style="color: #D4AF37; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">
+                    [실전 매매 리포트] 2026.04.01 ~ 04.06
+                </p>
+                <img src="매매0406.png" alt="수익 리포트" class="report-img">
+            </div>
+            <div class="card" style="border-left: 4px solid #D4AF37;">
+                <h3>누적 순손익: $8,554.50</h3>
+                <p>단 4거래일 만에 달성한 결과입니다. 인간의 욕심이 배제된 시스템의 힘을 확인하십시오.</p>
+            </div>
         </div>
 
         <div class="section">
-            <div class="section-title">"인간의 탐욕은 웃깁니다,<br>하지만 시스템은 정직합니다"</div>
+            <div class="section-title">"인간은 웃깁니다,<br>하지만 시스템은 정직합니다"</div>
             <div class="card">
                 <h3>01. 사람 유치 NO</h3>
                 <p>지인에게 아쉬운 소리 하지 마십시오. 우리는 사람을 쫓지 않고 시스템을 구축합니다.</p>
             </div>
             <div class="card">
-                <h3>02. 광고 부담 NO</h3>
-                <p>에치(Etsy)와 쇼피파이의 검색 엔진이 전 세계 손님을 알아서 데려옵니다.</p>
-            </div>
-            <div class="card">
-                <h3>03. 노동 집약 NO</h3>
+                <h3>02. 노동 집약 NO</h3>
                 <p>한 번 등록한 AI 콘텐츠는 당신이 잠든 사이에도 무한 복제되어 판매됩니다.</p>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">글로벌 달러 파이프라인</div>
-            <div class="step">
-                <div class="step-num">1</div>
-                <h4>글로벌 본부 구축 (Shopify)</h4>
-                <p>전문가의 포스가 느껴지는 독자적인 글로벌 쇼핑몰 세팅</p>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h4>에치(Etsy) 항구 입성</h4>
-                <p>전 세계 수억 명의 구매자가 대기 중인 마켓플레이스 런칭</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <h4>영업 자동화 (BixGrow)</h4>
-                <p>글로벌 파트너들이 당신 대신 마케팅하는 레버리지 시스템</p>
-            </div>
-            <div class="step">
-                <div class="step-num">4</div>
-                <h4>실시간 달러 정산</h4>
-                <p>페이오니아를 통해 사업자 개설 국내 은행 예금통장으로 수익 직송</p>
-            </div>
-        </div>
-
-        <div class="section" style="text-align: center; background: #080808;">
+        <div class="section" style="text-align: center;">
             <p style="font-style: italic; color: #D4AF37; font-size: 1.1rem;">"뜰 앞의 잣나무처럼 중심을 잡으십시오.<br>수익은 심법(心法)이 만듭니다."</p>
             <p style="color: #666; font-size: 0.9rem; margin-top: 30px;">550만 원은 당신의 은퇴 후 30년을 책임질<br>전 세계 함대의 승선 티켓입니다.</p>
         </div>
