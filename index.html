@@ -3,79 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTISAN - 글로벌 자동수익화 함대</title>
+    <title>ARTISAN - 해외선물 무료 종목 추천</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; background-color: #050505; color: #fff; font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
-        .container { max-width: 500px; margin: 0 auto; background: #000; min-height: 100vh; position: relative; box-shadow: 0 0 50px rgba(212, 175, 55, 0.1); }
+        body, html { margin: 0; padding: 0; background-color: #050505; color: #fff; font-family: 'Noto Sans KR', sans-serif; }
+        .container { max-width: 500px; margin: 0 auto; background: #000; min-height: 100vh; position: relative; border: 1px solid #222; }
         
-        /* 히어로 섹션 */
-        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); padding: 0 20px; }
-        .gold-tag { color: #D4AF37; font-weight: bold; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid #D4AF37; padding: 5px 15px; border-radius: 20px; display: inline-block; }
-        h1 { font-size: 2.2rem; line-height: 1.3; margin-bottom: 30px; text-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        /* 헤더: 긴급함 강조 */
+        .header { background: #D4AF37; color: #000; text-align: center; padding: 10px; font-weight: bold; font-size: 0.9rem; }
+        
+        /* 히어로: 혜택 강조 */
+        .hero { padding: 50px 20px; text-align: center; background: linear-gradient(to bottom, #111, #000); }
+        h1 { font-size: 1.8rem; line-height: 1.4; margin-bottom: 20px; }
         h1 span { color: #D4AF37; }
+        .gift-box { border: 1px dashed #D4AF37; padding: 15px; margin: 20px 0; border-radius: 10px; background: rgba(212, 175, 55, 0.05); }
 
-        /* 섹션 공통 스타일 */
-        .section { padding: 60px 30px; border-bottom: 1px solid #111; }
-        .section-title { font-size: 1.6rem; color: #D4AF37; margin-bottom: 40px; text-align: center; font-weight: bold; }
-        
-        /* 수익 인증 이미지 스타일 */
-        .report-img { width: 100%; border: 1px solid #D4AF37; border-radius: 8px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); margin-bottom: 20px; }
-        
-        /* 3無 원칙 카드 */
-        .card { background: rgba(255,255,255,0.03); border: 1px solid #222; padding: 25px; margin-bottom: 20px; border-radius: 10px; transition: 0.3s; }
-        .card:hover { border-color: #D4AF37; background: rgba(212, 175, 55, 0.05); }
-        .card h3 { color: #D4AF37; margin-top: 0; font-size: 1.2rem; }
-        .card p { color: #ccc; line-height: 1.6; font-size: 0.95rem; margin-bottom: 0; }
+        /* 수익 인증 (실체 보여주기) */
+        .proof { padding: 40px 20px; border-top: 1px solid #111; text-align: center; }
+        .proof img { width: 100%; border-radius: 5px; border: 1px solid #333; margin: 20px 0; }
 
-        /* 하단 버튼 */
-        .cta-box { position: sticky; bottom: 0; left: 0; width: 100%; padding: 20px; box-sizing: border-box; background: linear-gradient(to top, #000 80%, transparent); z-index: 100; }
-        .btn-join { display: block; background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%); color: #000; text-align: center; padding: 20px; border-radius: 10px; text-decoration: none; font-size: 1.2rem; font-weight: bold; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); }
+        /* 버튼: 강력한 유입 */
+        .cta-area { position: sticky; bottom: 0; padding: 20px; background: linear-gradient(to top, #000 80%, transparent); }
+        .btn-free { display: block; background: #D4AF37; color: #000; text-align: center; padding: 20px; border-radius: 50px; text-decoration: none; font-size: 1.3rem; font-weight: bold; animation: pulse 2s infinite; }
+
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="header">🚨 선착순 100명 한정 무료 정보 개방</div>
+        
         <div class="hero">
-            <div class="gold-tag">SOPHI GROUP</div>
-            <h1>당신이 잠든 사이,<br>시스템은 <span>숫자</span>로 증명합니다</h1>
-            <p style="color:#888;">AI 글로벌 자동수익화 함대 리포트</p>
-        </div>
-
-        <div class="section" style="background: #080808;">
-            <div class="section-title">"시스템은 정직합니다"</div>
-            <div style="text-align: center;">
-                <p style="color: #D4AF37; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">
-                    [실전 매매 리포트] 2026.04.01 ~ 04.06
-                </p>
-                <img src="매매0406.png" alt="수익 리포트" class="report-img">
-            </div>
-            <div class="card" style="border-left: 4px solid #D4AF37;">
-                <h3>누적 순손익: $8,554.50</h3>
-                <p>단 4거래일 만에 달성한 결과입니다. 인간의 욕심이 배제된 시스템의 힘을 확인하십시오.</p>
+            <h1>"아직도 <span>손실</span>만 보고 계십니까?"</h1>
+            <p style="color:#aaa;">인공지능(AI)과 심법(心法)이 결합된<br>해외선물 실시간 종목 추천</p>
+            
+            <div class="gift-box">
+                <p style="margin:0; color:#D4AF37;">🎁 오늘 가입 시 즉시 혜택</p>
+                <ul style="text-align:left; font-size:0.9rem; color:#ccc; line-height:1.8;">
+                    <li>매일 아침 나스닥/크루드오일 주요 타점 공유</li>
+                    <li>승률 80% 이상 '아티산' 실전 매매기법 자료</li>
+                    <li>무료 리딩 커뮤니티 정회원 등업</li>
+                </ul>
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">"인간은 웃깁니다,<br>하지만 시스템은 정직합니다"</div>
-            <div class="card">
-                <h3>01. 사람 유치 NO</h3>
-                <p>지인에게 아쉬운 소리 하지 마십시오. 우리는 사람을 쫓지 않고 시스템을 구축합니다.</p>
-            </div>
-            <div class="card">
-                <h3>02. 노동 집약 NO</h3>
-                <p>한 번 등록한 AI 콘텐츠는 당신이 잠든 사이에도 무한 복제되어 판매됩니다.</p>
-            </div>
+        <div class="proof">
+            <h3 style="color:#D4AF37;">최근 4일간 순수익 $8,554.50</h3>
+            <p style="font-size:0.8rem; color:#888;">(실제 아티산 시스템 매매 결과)</p>
+            <img src="매매0406.png" alt="수익인증">
+            <p style="font-size:0.9rem; color:#ccc;">"우리는 숫자로만 말합니다. 결과가 증명합니다."</p>
         </div>
 
-        <div class="section" style="text-align: center;">
-            <p style="font-style: italic; color: #D4AF37; font-size: 1.1rem;">"뜰 앞의 잣나무처럼 중심을 잡으십시오.<br>수익은 심법(心法)이 만듭니다."</p>
-            <p style="color: #666; font-size: 0.9rem; margin-top: 30px;">550만 원은 당신의 은퇴 후 30년을 책임질<br>전 세계 함대의 승선 티켓입니다.</p>
-        </div>
-
-        <div class="cta-box">
-            <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-join">
-                🚢 희망의 함대 승선 상담하기
+        <div class="cta-area">
+            <a href="https://cafe.naver.com/tradingpic" target="_blank" class="btn-free">
+                🚢 무료 종목 추천받기 (클릭)
             </a>
+            <p style="text-align:center; font-size:0.7rem; color:#666; margin-top:10px;">* 버튼 클릭 시 네이버 카페로 이동합니다.</p>
         </div>
     </div>
 </body>
