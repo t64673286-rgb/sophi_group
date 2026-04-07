@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTISAN - NASDAQ 100 PROFIT</title>
+    <title>ARTISAN - 나스닥 100 일당 $1,000</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html { margin: 0; padding: 0; background-color: #000; color: #fff; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
-        .container { max-width: 480px; margin: 0 auto; background: #000; min-height: 100vh; border: 1px solid #003366; }
+        .container { max-width: 480px; margin: 0 auto; background: #000; min-height: 100vh; border: 1px solid #003366; position: relative; }
         .header { background: #0066ff; color: #fff; text-align: center; padding: 12px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
         .hero { padding: 40px 20px; text-align: center; background: radial-gradient(circle at top, #001a33 0%, #000 80%); }
         h1 { font-size: 1.7rem; margin-bottom: 10px; color: #fff; }
         h1 span { color: #0066ff; text-shadow: 0 0 20px rgba(0,102,255,0.7); }
-        .visual-frame { width: 90%; margin: 0 auto; border-radius: 15px; border: 2px solid #0066ff; box-shadow: 0 0 30px rgba(0,102,255,0.4); overflow: hidden; }
-        .visual-frame img { width: 100%; display: block; }
-        .cta-area { position: sticky; bottom: 0; padding: 25px; background: linear-gradient(to top, #000 70%, transparent); }
-        .btn-nasdaq { display: block; background: #0066ff; color: #fff; text-align: center; padding: 20px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        
+        /* 메인 비주얼: 나스닥 수익 인증 이미지 공간 */
+        .visual-area { padding: 0 20px; }
+        .visual-frame { width: 100%; border-radius: 15px; border: 2px solid #0066ff; box-shadow: 0 0 30px rgba(0,102,255,0.4); overflow: hidden; background: #111; }
+        .visual-frame img { width: 100%; display: block; object-fit: cover; }
+        
+        .info-section { padding: 30px 20px; text-align: center; }
+        .info-section p { font-size: 0.95rem; color: #88aacc; margin-bottom: 20px; }
+        
+        /* 하단 고정 버튼 */
+        .cta-area { position: sticky; bottom: 0; padding: 25px; background: linear-gradient(to top, #000 70%, transparent); z-index: 100; }
+        .btn-nasdaq { display: block; background: #0066ff; color: #fff; text-align: center; padding: 20px; border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold; animation: pulseBlue 2s infinite; box-shadow: 0 10px 25px rgba(0,102,255,0.5); }
+        @keyframes pulseBlue { 0% { transform: scale(1); } 50% { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,102,255,0.6); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">⚡ ARTISAN NASDAQ 100 SIGNAL</div>
+        <div class="header">⚡ ARTISAN NASDAQ 100 STRATEGY</div>
+        
         <div class="hero">
             <h1>나스닥 <span>100</span><br>일당 100만 원의 법칙</h1>
-            <p style="color:#88aacc;">데이터로 증명하는 압도적 수익</p>
+            <p style="color:#6688aa;">데이터로 증명하는 압도적 수익</p>
         </div>
-        <div class="visual-frame">
-            <img src="https://t64673286-rgb.github.io/sophi_group/nasdaq_visual.gif" alt="nasdaq profit waterfall">
+
+        <div class="visual-area">
+            <div class="visual-frame">
+                <img src="nasdaq_visual.png" alt="나스닥 수익 인증">
+            </div>
         </div>
+
+        <div class="info-section">
+            <p>변동성은 위기가 아닌 기회입니다.<br>아티산 함대에서 실시간으로 공유합니다.</p>
+        </div>
+
         <div class="cta-area">
-            <a href="https://cafe.naver.com/myartisan" target="_blank" class="btn-nasdaq">🚢 나스닥 함대 승선하기</a>
+            <a href="https://cafe.naver.com/myartisan" target="_blank" class="btn-nasdaq">
+                🚢 나스닥 수익 함대 승선하기
+            </a>
         </div>
     </div>
 </body>
